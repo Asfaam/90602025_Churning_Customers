@@ -1,10 +1,15 @@
+import numpy as np
+import tensorflow as tf
+import keras
+from keras import layers
 import pickle
 import streamlit as st
 import pandas as pd
 from PIL import Image
 
 # Load the trained model
-model = pickle.load(open('customer_churn.pkl', 'rb'))
+#model = pickle.load(open('customer_churn.keras', 'rb'))
+model = keras.models.load_model('customer_churn.keras')
  
 def main():
     image = Image.open('images/icone.png') 
