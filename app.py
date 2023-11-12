@@ -40,7 +40,7 @@ custom_objects = {
 }
 
 # Load the model with custom objects
-model = load_model('customer_churn.keras', custom_objects=custom_objects, compile=True)
+model = load_model('customer_churn.h5', custom_objects=custom_objects, compile=True)
 
 # Recompile the model
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
