@@ -21,7 +21,6 @@ drive.mount('/content/drive')
 
 ## Import libraries
 import keras
-import utils
 import pickle
 import warnings
 import numpy as np
@@ -37,6 +36,8 @@ from sklearn.metrics import accuracy_score
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
+from sklearn.neural_network import MLPClassifier
+from sklearn.model_selection import GridSearchCV
 import plotly.express as px ##  For visualization
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt ##  For visualization
@@ -457,6 +458,37 @@ plt.show();
 ## Calculating the confidence factor
 cofidence_factor = 2.58 * sqrt( (accuracy * (1 - accuracy)) / y_test.shape[0])
 cofidence_factor
+
+# Define the MLPClassifier
+mlp = MLPClassifier(max_iter=1, warm_start=True)
+
+# Define hyperparameters to tune
+param_grid = {
+    'hidden_layer_sizes': [(64,), (128,), (64, 32)],
+    'activation': ['relu', 'tanh'],
+    'solver': ['adam', 'sgd'],
+    'alpha': [0.0001, 0.001],
+}
+
+# Use GridSearchCV for hyperparameter tuning
+grid = GridSearchCV(estimator=mlp, param_grid=param_grid, cv=5, scoring='accuracy')
+grid_result = grid.fit(X_train, y_train)
+
+# Print the best parameters and corresponding accuracy
+print("Best accuracy: %f using best parameters: %s" % (grid_result.best_score_, grid_result.best_params_))
+
+# Get the best model with the optimal hyperparameters
+best_mlp = grid_result.best_estimator_
+
+# Predict on the test set
+y_pred = best_mlp.predict(X_test)
+
+# Calculate accuracy and other metrics
+accuracy = accuracy_score(y_test, y_pred)
+auc_score = roc_auc_score(y_test, y_pred)
+
+print(f"\nAccuracy: {accuracy}")
+print(f"AUC Score: {auc_score}")
 
 ## Save the model
 model = model.save('customer_churn.h5')
