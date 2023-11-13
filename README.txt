@@ -1,84 +1,65 @@
-This repository contains all my machine learning exercises and small projects.
+-- Telecom Customer Churn Prediction Model --
 
-***Learning Outcomes*** 
-* learn how to preprocess data for modeling.
-* Skill to know when to use the appropriate models.
-* Pandas,Numpy and matplotib skills 
-* Develop an appreciation for what is involved in Learning models from data
-* Understand a wide variety of learning algorithms
-* Understand how to evaluate models generated from data
-* Apply the algorithms to a real problem, optimize the models learned and report on the expected accuracy that can be achieved by applying the models
-
-# Classification -- Predicting Customer Churn
-
-Introduction
+## Introduction
 
 Customer attrition is one of the biggest expenditures of any organization. Customer churn otherwise known as customer attrition or customer turnover is the percentage of customers that stopped using your company's product or service within a specified timeframe.
 For instance, if you began the year with 500 customers but later ended with 480 customers, the percentage of customers that left would be 4%. If we could figure out why a customer leaves and when they leave with reasonable accuracy, it would immensely help the organization to strategize their retention initiatives manifold.
 
-In this project, the aim is to find the likelihood of a customer leaving the organization, the key indicators of churn as well as the retention strategies that can be implemented to avert this problem.
+** Overview **
+This project aims to predict customer churn in a fictional telecommunication use case using machine learning. The predictive model is based on a Multi-Layer Perceptron (MLP) trained on customer data to predict whether a customer is likely to terminate their service or not. 
 
-Data Understanding
+Link to my model deploymnet video: []
 
-The data for this project is in a csv format. The following describes the columns present in the data.
+## Model Features
 
-Gender -- Whether the customer is a male or a female
+- **Input Features:**
+  - The model takes into account various customer demographic data.
+  - Payment information and service subscriptions (e.g., online security, streaming services) are considered.
 
-SeniorCitizen -- Whether a customer is a senior citizen or not
+- **Target Variable:**
+  - The target variable is binary, representing whether a customer churned (1) or not (0).
 
-Partner -- Whether the customer has a partner or not (Yes, No)
+- **Training Technique:**
+  - The model is trained using the Functional API of TensorFlow.
 
-Dependents -- Whether the customer has dependents or not (Yes, No)
+## Model Evaluation
 
-Tenure -- Number of months the customer has stayed with the company
+- **Performance Metrics:**
+  - The model's accuracy and Area Under the Curve (AUC) score are evaluated on a test dataset.
 
-Phone Service -- Whether the customer has a phone service or not (Yes, No)
+- **Oversampling:**
+  - The training dataset is oversampled using SMOTE to address class imbalance.
 
-MultipleLines -- Whether the customer has multiple lines or not
+## Code Structure
 
-InternetService -- Customer's internet service provider (DSL, Fiber Optic, No)
+- The project includes codes for data exploration, preprocessing, model training, and evaluation.
 
-OnlineSecurity -- Whether the customer has online security or not (Yes, No, No Internet)
+## Usage
 
-OnlineBackup -- Whether the customer has online backup or not (Yes, No, No Internet)
+- The model can be use for predicting customer churn in various scenarios by providing relevant customer data.
 
-DeviceProtection -- Whether the customer has device protection or not (Yes, No, No internet service)
-
-TechSupport -- Whether the customer has tech support or not (Yes, No, No internet)
-
-StreamingTV -- Whether the customer has streaming TV or not (Yes, No, No internet service)
-
-StreamingMovies -- Whether the customer has streaming movies or not (Yes, No, No Internet service)
-
-Contract -- The contract term of the customer (Month-to-Month, One year, Two year)
-
-PaperlessBilling -- Whether the customer has paperless billing or not (Yes, No)
-
-Payment Method -- The customer's payment method (Electronic check, mailed check, Bank transfer(automatic), Credit card(automatic))
-
-MonthlyCharges -- The amount charged to the customer monthly
-
-TotalCharges -- The total amount charged to the customer
-
-Churn -- Whether the customer churned or not (Yes or No)
-
-Instructions
-
-The task is to understand the data and prepare it for model building. The analysis or methods should incorporate the following steps.
-
-Hypothesis formation and Data Processing - Importing the relevant libraries and modules, Cleaning of Data, Check data types, Encoding Data labels etc.
-
-Data Evaluation -- Perform bivariate and multivariate analysis, EDA
-
-
-Build & Select Model -- Train Model on dataset and select the best performing model.
-
-Evaluate your chosen Model.
-
-Model Improvement.
+## Dependencies
+- Python
+- TensorFlow
+- Scikit-learn
+- Pandas
+- NumPy
+- Seaborn
+- Matplotlib
 
 
 
+Conclusion:
+In conclusion, this project successfully developed a churn prediction model using Multi-Layer Perceptron model (Functional API). By applying feature selection, and model evaluation, the performance of the model was improved compared to the baseline. 
+It's important to note that this project represents a specific approach to churn prediction. Further improvements and experimentation, such as using more advanced techniques in deep learning could potentially enhance the model's performance.
 
-# Author
-Faisal Alidu
+
+## Acknowledgments
+- This project was developed as part of Ashesi University's coursework in Introduction to AI.
+
+
+## Author/
+- Faisal Alidu
+
+---
+
