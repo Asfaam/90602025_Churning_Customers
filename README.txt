@@ -70,7 +70,6 @@ Hypothesis formation and Data Processing - Importing the relevant libraries and 
 
 Data Evaluation -- Perform bivariate and multivariate analysis, EDA
 
-Useful resources [ Exploratory Data Analysis: Univariate, Bivariate, and Multivariate Analysis , Univariate, Bivariate and Multivariate Analysis , Exploratory Data Analysis (EDA) Using Python]
 
 Build & Select Model -- Train Model on dataset and select the best performing model.
 
@@ -78,18 +77,6 @@ Evaluate your chosen Model.
 
 Model Improvement.
 
-Future Predictions.
-
-Key Insights and Conclusion.
-
-Upon completion of the project, I'll write a blog post on my thought process on medium, LinkedIn, personal blog, or any other suitable blogging site.
-
-Conclusion:
-In conclusion, this project successfully developed a churn prediction model using logistic regression. By applying feature selection, hyperparameter tuning, and model evaluation, the performance of the model was improved compared to the baseline. The final logistic regression model achieved an F1-score of 72.4% on the test set.
-
-The model demonstrated the ability to distinguish between churned and non-churned customers with satisfactory discriminatory power. The selected features, such as gender, device protection, senior citizenship, contract type, payment method, and tenure, played significant roles in predicting customer churn.
-
-It's important to note that this project represents a specific approach to churn prediction using logistic regression. Further improvements and experimentation, such as feature engineering, trying different classification algorithms, or using more advanced techniques like deep learning, could potentially enhance the model's performance.
 
 
 

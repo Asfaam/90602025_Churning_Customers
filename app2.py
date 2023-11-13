@@ -48,11 +48,11 @@ def main():
     PaperlessBilling = 1 if PaperlessBilling == 'yes' else 0
 
     ## Convert "Contract" categorical value to numerical
-    contract_mapping = {'month-to-month': 0, 'one_year': 1, 'two_year': 2}
+    contract_mapping = {'month-to-month': 0, 'one_year': 1, 'two_years': 2}
     Contract = st.selectbox('Customer has a contract:', list(contract_mapping.keys()))
     Contract = contract_mapping[Contract]
     
-    Tenure = st.number_input('Number of months the customer has been with the current telco provider:', min_value=0, max_value=240, value=0)
+    Tenure = st.number_input('How many months has the customer been with the current telco provider:', min_value=0, max_value=240, value=0)
     MonthlyCharges = st.number_input('Monthly charges:', min_value=0, max_value=1000000, value=0)
     TotalCharges = Tenure * MonthlyCharges
 
